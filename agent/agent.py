@@ -506,7 +506,7 @@ Response (JSON only):"""
         Main entry point for the agent.
         
         This method evolves across lessons to use different capabilities.
-        Currently at: Lesson 07 (with memory)
+        Currently, at: Lesson 07 (with memory)
         
         Args:
             user_input: The user's question or request

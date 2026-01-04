@@ -87,11 +87,23 @@ def lesson_06_agent_loop():
     print("\n" + "="*50)
     print("LESSON 06: Agent Loop")
     print("="*50)
-
+    
     agent = Agent("models/llama-3-8b-instruct.gguf")
-
+    
+    print("\nNote: Repetition in early iterations is expected.")
+    print("The agent refines its understanding step by step and may repeat analysis")
+    print("before converging on a clearer explanation.\n")
+    
     results = agent.run_loop("Help me understand loops", max_steps=3)
-    print(f"Loop results: {results}")
+    
+    for i, result in enumerate(results, 1):
+        print(f"Iteration {i}:")
+        action = result.get("action", "unknown")
+        reason = result.get("reason", "No reason provided")
+        print(f"  Action: {action}")
+        print(f"  Reason: {reason}")
+        if i < len(results):
+            print()
 
 
 def lesson_07_memory():

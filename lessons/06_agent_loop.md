@@ -139,9 +139,23 @@ from agent.agent import Agent
 
 agent = Agent("models/llama-3-8b-instruct.gguf")
 
+print("\nNote: Repetition in early iterations is expected.")
+print("The agent refines its understanding step by step and may repeat analysis")
+print("before converging on a clearer explanation.\n")
+
 results = agent.run_loop("Help me understand loops", max_steps=3)
-print(f"Loop results: {results}")
+
+for i, result in enumerate(results, 1):
+    print(f"Iteration {i}:")
+    action = result.get("action", "unknown")
+    reason = result.get("reason", "No reason provided")
+    print(f"  Action: {action}")
+    print(f"  Reason: {reason}")
+    if i < len(results):
+        print()
 ```
+
+The output shows each iteration with the action taken and reason. Note that repetition in early iterations is expected - the agent refines its understanding step by step.
 
 ## Compare to Lesson 05
 
