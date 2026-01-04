@@ -1,0 +1,10 @@
+models/
+__pycache__/
+*.pyc
+.env
+*.gguf
+.DS_Store
+.vscode/
+.idea/
+*.log
+venv
