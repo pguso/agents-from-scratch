@@ -43,7 +43,7 @@ This lesson is intentionally minimal.
 
 ## The Code
 
-Look at `agent/agent.py` → `simple_generate()` method:
+Look at `agent/agent.py`, see `simple_generate()` method:
 
 ```python
 def simple_generate(self, user_input: str) -> str:
@@ -57,7 +57,7 @@ That's it. One line. No complexity.
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_01_basic_chat()` method:
+Look at `complete_example.py`, see `lesson_01_basic_chat()` method:
 
 ```python
 from agent.agent import Agent

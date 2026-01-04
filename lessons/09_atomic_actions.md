@@ -45,7 +45,7 @@ This catches errors before execution.
 
 ## The Code
 
-Look at `agent/planner.py` → `create_atomic_action()` function:
+Look at `agent/planner.py`, see `create_atomic_action()` function:
 
 ```python
 def create_atomic_action(llm: LocalLLM, step: str) -> dict | None:
@@ -120,7 +120,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_09_atomic_actions()` method:
+Look at `complete_example.py`, see `lesson_09_atomic_actions()` method:
 
 ```python
 from agent.agent import Agent
@@ -146,13 +146,13 @@ if plan and "steps" in plan and plan["steps"]:
 
 **Lesson 08 (Planning):**
 ```
-Goal → Plan: ["Research topic", "Create outline", "Write draft"]
+Goal -> Plan: ["Research topic", "Create outline", "Write draft"]
 ```
 Plans are lists of vague step descriptions.
 
 **Lesson 09 (Atomic Actions):**
 ```
-Step: "Write draft" → Atomic: {"action": "generate_text", "inputs": {"topic": "...", "length": "..."}}
+Step: "Write draft" -> Atomic: {"action": "generate_text", "inputs": {"topic": "...", "length": "..."}}
 ```
 Steps become specific, typed actions with validated parameters.
 

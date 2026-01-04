@@ -60,7 +60,7 @@ All based on the system prompt.
 
 ## The Code
 
-Look at `agent/agent.py` → `generate_with_role()` method:
+Look at `agent/agent.py`, see `generate_with_role()` method:
 
 ```python
 def generate_with_role(self, user_input: str) -> str:
@@ -87,7 +87,7 @@ Notice we've added:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_02_with_role()` method:
+Look at `complete_example.py`, see `lesson_02_with_role()` method:
 
 ```python
 from agent.agent import Agent

@@ -46,7 +46,7 @@ The model **requests** tools. The system **executes** them. No autonomy yet. Thi
 
 ## The Code
 
-Look at `agent/agent.py` → `request_tool()` method:
+Look at `agent/agent.py`, see `request_tool()` method:
 
 ```python
 def request_tool(self, user_input: str) -> dict | None:
@@ -89,7 +89,7 @@ Response (JSON only):"""
     
     return None
 
-def execute_tool_call(self, tool_call: dict) -> any:
+def execute_tool_call(self, tool_call: dict) -> Any:
     """
     Execute a tool call requested by the model.
     
@@ -110,7 +110,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_05_tools()` method:
+Look at `complete_example.py`, see `lesson_05_tools()` method:
 
 ```python
 from agent.agent import Agent

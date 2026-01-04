@@ -17,6 +17,8 @@ Lesson progression:
 10: AoT (Atom of Thought)
 """
 
+from typing import Any
+
 from shared.llm import LocalLLM
 from shared.utils import safe_json_parse, extract_json_from_text
 from agent.state import AgentState
@@ -236,7 +238,7 @@ Response (JSON only):"""
         
         return None
     
-    def execute_tool_call(self, tool_call: dict) -> any:
+    def execute_tool_call(self, tool_call: dict) -> Any:
         """
         Execute a tool call requested by the model.
         

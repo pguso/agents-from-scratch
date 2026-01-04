@@ -1,10 +1,10 @@
-# Lesson 06  -  The Agent Loop (Without ReAct)
+# Lesson 06  -  The Agent Loop
 
 ## What Question Are We Answering?
 
 **"How does this become an agent instead of a chatbot?"**
 
-Answer: When it can **observe → decide → act → repeat**, with state. A chatbot responds once and stops. An agent takes multiple steps toward a goal.
+Answer: When it can **observe, decide, act, and repeat**, with state. A chatbot responds once and stops. An agent takes multiple steps toward a goal.
 
 ## What You Will Build
 
@@ -18,7 +18,7 @@ An agent loop that:
 
 ### 1. Agent Loop
 
-The **agent loop** is the repeating cycle: observe → decide → act. Each iteration, the agent looks at the current situation, decides what to do, takes that action, and repeats until done.
+The **agent loop** is the repeating cycle: observe, decide, act. Each iteration, the agent looks at the current situation, decides what to do, takes that action, and repeats until done.
 
 This is what separates agents from simple chatbots - agents don't stop after one response.
 
@@ -46,12 +46,12 @@ Without termination, the loop would run forever.
 
 ## The Code
 
-Look at `agent/agent.py` → `agent_step()` and `run_loop()` methods:
+Look at `agent/agent.py`, see `agent_step()` and `run_loop()` methods:
 
 ```python
 def agent_step(self, user_input: str) -> dict | None:
     """
-    Execute one step of the agent loop: observe → decide → act.
+    Execute one step of the agent loop: observe, decide, act.
     
     Lesson 06 version.
     
@@ -132,7 +132,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_06_agent_loop()` method:
+Look at `complete_example.py`, see `lesson_06_agent_loop()` method:
 
 ```python
 from agent.agent import Agent
@@ -147,15 +147,15 @@ print(f"Loop results: {results}")
 
 **Lesson 05 (Tool Calling):**
 ```
-Request → Tool call → Result → Done
+Request -> Tool call -> Result -> Done
 ```
 Single interaction: request, execute, return.
 
 **Lesson 06 (Agent Loop):**
 ```
-Input → Step 1 → Step 2 → Step 3 → Done
-         ↓        ↓        ↓
-      Action   Action   Action
+Input -> Step 1 -> Step 2 -> Step 3 -> Done
+          |        |        |
+        Action   Action   Action
 ```
 Multiple steps in sequence, each deciding what to do next.
 

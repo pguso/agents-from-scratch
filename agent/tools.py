@@ -5,6 +5,8 @@ Tools are APIs, not abilities.
 The agent requests tools; the system executes them.
 """
 
+from typing import Any
+
 
 def calculator(a: float, b: float, operation: str = "add") -> float:
     """
@@ -57,7 +59,7 @@ def get_tool_schema() -> dict:
     }
 
 
-def execute_tool(tool_name: str, arguments: dict) -> any:
+def execute_tool(tool_name: str, arguments: dict) -> Any:
     """
     Execute a tool by name with given arguments.
     

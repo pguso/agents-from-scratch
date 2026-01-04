@@ -42,7 +42,7 @@ Simple retrieval might mean "get all memories." More sophisticated retrieval fin
 
 ## The Code
 
-Look at `agent/agent.py` → `run_with_memory()` method:
+Look at `agent/agent.py`, see `run_with_memory()` method:
 
 ```python
 def run_with_memory(self, user_input: str) -> dict | None:
@@ -82,8 +82,8 @@ Required JSON format:
 {{"reply": "your response text", "save_to_memory": "fact to remember" or null}}
 
 Examples:
-- User says "My name is Alice" → {{"reply": "Nice to meet you, Alice!", "save_to_memory": "User's name is Alice"}}
-- User asks "What's my name?" and you remember "User's name is Alice" → {{"reply": "Your name is Alice", "save_to_memory": null}}
+- User says "My name is Alice" -> {{"reply": "Nice to meet you, Alice!", "save_to_memory": "User's name is Alice"}}
+- User asks "What's my name?" and you remember "User's name is Alice" -> {{"reply": "Your name is Alice", "save_to_memory": null}}
 
 User input: {user_input}
 
@@ -112,7 +112,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_07_memory()` method:
+Look at `complete_example.py`, see `lesson_07_memory()` method:
 
 ```python
 from agent.agent import Agent
@@ -136,16 +136,16 @@ print(f"Memory contents: {agent.memory.get_all()}")
 
 **Lesson 06 (Agent Loop):**
 ```
-Loop → Step 1 → Step 2 → Step 3 → Done
-        ↓         ↓        ↓
-      Action   Action   Action
+Loop -> Step 1 -> Step 2 -> Step 3 -> Done
+         |         |        |
+       Action   Action   Action
 ```
 State persists within the loop but resets when the loop ends.
 
 **Lesson 07 (Memory):**
 ```
-Interaction 1 → Save "name is Alice" → Memory stores it
-Interaction 2 → Load memory → "Your name is Alice"
+Interaction 1 -> Save "name is Alice" -> Memory stores it
+Interaction 2 -> Load memory -> "Your name is Alice"
 ```
 Memory persists across completely separate interactions.
 

@@ -44,7 +44,7 @@ Validation ensures the output matches your contract:
 
 ## The Code
 
-Look at `agent/agent.py` → `generate_structured()` method:
+Look at `agent/agent.py`, see `generate_structured()` method:
 
 ```python
 def generate_structured(self, user_input: str, schema: str) -> dict | None:
@@ -93,7 +93,7 @@ Notice we've added:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_03_structured()` method:
+Look at `complete_example.py`, see `lesson_03_structured()` method:
 
 ```python
 from agent.agent import Agent

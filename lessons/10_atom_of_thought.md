@@ -36,7 +36,7 @@ Validation catches structural errors before execution begins.
 
 ## The Code
 
-Look at `agent/planner.py` → `create_aot_graph()` function:
+Look at `agent/planner.py`, see `create_aot_graph()` function:
 
 ```python
 def create_aot_graph(llm: LocalLLM, goal: str) -> dict | None:
@@ -146,7 +146,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_10_aot()` method:
+Look at `complete_example.py`, see `lesson_10_aot()` method:
 
 ```python
 from agent.agent import Agent
@@ -165,13 +165,13 @@ if graph:
 
 **Lesson 09 (Atomic Actions):**
 ```
-Step → Atomic action: {"action": "...", "inputs": {...}}
+Step -> Atomic action: {"action": "...", "inputs": {...}}
 ```
 Single step converted to atomic action.
 
 **Lesson 10 (AoT):**
 ```
-Goal → Graph: {
+Goal -> Graph: {
   nodes: [
     {id: "1", action: "...", depends_on: []},
     {id: "2", action: "...", depends_on: ["1"]}

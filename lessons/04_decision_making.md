@@ -43,7 +43,7 @@ This is simpler than trying to parse free text to understand intent.
 
 ## The Code
 
-Look at `agent/agent.py` → `decide()` method:
+Look at `agent/agent.py`, see `decide()` method:
 
 ```python
 def decide(self, user_input: str, choices: list[str]) -> str | None:
@@ -100,7 +100,7 @@ Notice we've added:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_04_decisions()` method:
+Look at `complete_example.py`, see `lesson_04_decisions()` method:
 
 ```python
 from agent.agent import Agent

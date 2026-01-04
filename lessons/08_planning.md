@@ -45,7 +45,7 @@ Validating plans catches errors before wasting time on execution.
 
 ## The Code
 
-Look at `agent/agent.py` → `create_plan()` and `execute_plan()` methods:
+Look at `agent/agent.py`, see `create_plan()` and `execute_plan()` methods:
 
 ```python
 def create_plan(self, goal: str) -> dict | None:
@@ -144,7 +144,7 @@ Notice:
 
 ## How to Run
 
-Look at `complete_example.py` → `lesson_08_planning()` method:
+Look at `complete_example.py`, see `lesson_08_planning()` method:
 
 ```python
 from agent.agent import Agent
@@ -163,15 +163,15 @@ if plan:
 
 **Lesson 07 (Memory):**
 ```
-User: "My name is Alice" → Save to memory
-User: "What's my name?" → Retrieve from memory
+User: "My name is Alice" -> Save to memory
+User: "What's my name?" -> Retrieve from memory
 ```
 Stores and retrieves facts.
 
 **Lesson 08 (Planning):**
 ```
-Goal: "Write article" → Plan: ["Research", "Outline", "Write", "Review"]
-Plan → Execute each step → Results
+Goal: "Write article" -> Plan: ["Research", "Outline", "Write", "Review"]
+Plan -> Execute each step -> Results
 ```
 Generates and executes a sequence of steps.
 

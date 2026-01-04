@@ -52,7 +52,7 @@ def lesson_03_structured():
 
 
 def lesson_04_decisions():
-    """Lesson 04: Decision making"""
+    """Lesson 04: Decision-making"""
     print("\n" + "="*50)
     print("LESSON 04: Decision Making")
     print("="*50)
