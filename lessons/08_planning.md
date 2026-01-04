@@ -175,6 +175,8 @@ Plan -> Execute each step -> Results
 ```
 Generates and executes a sequence of steps.
 
+![Planning Flow](diagrams/lesson-08-planning.png)
+
 ## Key Insights
 
 ### Plans Aren't Thoughts

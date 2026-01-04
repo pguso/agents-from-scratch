@@ -6,6 +6,8 @@ This repository teaches how AI agents actually work by building **one agent** st
 
 **No frameworks. No cloud APIs. No hidden reasoning. No magic.**
 
+![Agent Architecture](diagrams/agent-architecture.png)
+
 ## Philosophy
 
 Agents are not personalities. They are loops, state, and constraints.

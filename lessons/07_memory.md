@@ -132,6 +132,8 @@ if response2 and "reply" in response2:
 print(f"Memory contents: {agent.memory.get_all()}")
 ```
 
+![Memory System](diagrams/lesson-07-memory.png)
+
 ## Compare to Lesson 06
 
 **Lesson 06 (Agent Loop):**

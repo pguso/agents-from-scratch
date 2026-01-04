@@ -125,6 +125,8 @@ if tool_call:
     print(f"Tool result: {result}")
 ```
 
+![Tool Calling Flow](diagrams/lesson-05-tool-calling.png)
+
 ## Compare to Lesson 04
 
 **Lesson 04 (Decision Making):**
