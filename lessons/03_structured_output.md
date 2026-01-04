@@ -48,28 +48,52 @@ Look at `agent/agent.py` → `generate_structured()` method:
 
 ```python
 def generate_structured(self, user_input: str, schema: str) -> dict | None:
-    prompt = f"""
-{self.system_prompt}
+    """
+    Generate structured JSON output with validation and retries.
+    
+    Lesson 03 version.
+    
+    Args:
+        user_input: The user's question or request
+        schema: JSON schema description
+        
+    Returns:
+        Parsed JSON dictionary or None if all retries failed
+    """
+    prompt = f"""{self.system_prompt}
 
-Return ONLY valid JSON.
-No explanations. No markdown. No extra text.
+CRITICAL INSTRUCTIONS:
+1. Respond with ONLY valid JSON
+2. No explanations, no markdown, no extra text before or after the JSON
+3. Start your response with {{ and end with }}
 
-Schema:
+Schema you must follow:
 {schema}
 
-{user_input}
-"""
+User request: {user_input}
+
+Response (JSON only):"""
     
+    # Try up to 3 times
     for attempt in range(3):
-        response = self.llm.generate(prompt)
+        response = self.llm.generate(prompt, temperature=0.0)
         parsed = extract_json_from_text(response)
+        
         if parsed is not None:
             return parsed
     
     return None
 ```
 
+Notice we've added:
+- **Strong instructions** - "CRITICAL INSTRUCTIONS" with explicit JSON-only requirements
+- **Temperature control** - `temperature=0.0` for more deterministic, consistent output
+- **JSON extraction** - `extract_json_from_text()` handles cases where the model adds extra text
+- **Retry logic** - Up to 3 attempts to get valid JSON, turning probabilistic behavior into reliable results
+
 ## How to Run
+
+Look at `complete_example.py` → `lesson_03_structured()` method:
 
 ```python
 from agent.agent import Agent
@@ -78,18 +102,18 @@ agent = Agent("models/llama-3-8b-instruct.gguf")
 
 schema = '''
 {
-  "task": string,
-  "difficulty": "easy" | "medium" | "hard"
+  "topic": string,
+  "difficulty": "beginner" | "intermediate" | "advanced"
 }
 '''
 
 result = agent.generate_structured(
-    "Build a small agent that can summarize articles",
+    "Explain quantum computing",
     schema
 )
 
 print(result)
-# {"task": "Build article summarizer", "difficulty": "medium"}
+# {"topic": "'quantum computing", "difficulty": "advanced"}
 ```
 
 ## Why This Matters
@@ -104,7 +128,7 @@ Output: "Okay! This task is medium difficulty. I'd suggest building..."
 
 ### After (Structured)
 ```
-Output: {"task": "Build article summarizer", "difficulty": "medium"}
+Output: {'topic': 'quantum computing', 'difficulty': 'advanced'}
 ```
 - Parseable
 - Predictable

@@ -104,13 +104,23 @@ def lesson_07_memory():
 
     # First interaction - store name
     response1 = agent.run_with_memory("My name is Alice")
-    print(f"Response 1: {response1}")
+    if response1 and "reply" in response1:
+        print(f"Response 1: {response1['reply']}")
+        if response1.get("save_to_memory"):
+            print(f"  → Saved to memory: {response1['save_to_memory']}")
+    else:
+        print(f"Response 1: {response1}")
 
     # Second interaction - recall name
     response2 = agent.run_with_memory("What's my name?")
-    print(f"Response 2: {response2}")
+    if response2 and "reply" in response2:
+        print(f"Response 2: {response2['reply']}")
+        if response2.get("save_to_memory"):
+            print(f"  → Saved to memory: {response2['save_to_memory']}")
+    else:
+        print(f"Response 2: {response2}")
 
-    print(f"Memory contents: {agent.memory.get_all()}")
+    print(f"\nMemory contents: {agent.memory.get_all()}")
 
 
 def lesson_08_planning():

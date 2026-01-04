@@ -61,22 +61,32 @@ def create_atomic_action(llm: LocalLLM, step: str) -> dict | None:
     Returns:
         Atomic action as a dictionary, or None if generation failed
     """
-    prompt = f"""Convert this step into an atomic action.
+    from shared.utils import extract_json_from_text
+    
+    prompt = f"""Convert this step into an atomic action. Respond with ONLY valid JSON.
 
-Return ONLY valid JSON.
+CRITICAL INSTRUCTIONS:
+1. Respond with ONLY valid JSON
+2. No explanations, no markdown, no other text
+3. Start your response with {{ and end with }}
 
-Schema:
+Required JSON format:
 {{
-  "action": string,
-  "inputs": object
+  "action": "action_name",
+  "inputs": {{"key": "value"}}
 }}
 
-Step:
-{step}"""
+The action should be a simple, atomic operation name.
+The inputs should be a dictionary with the parameters needed for this action.
+
+Step to convert:
+{step}
+
+Response (JSON only):"""
     
     for attempt in range(3):
-        response = llm.generate(prompt)
-        action = safe_json_parse(response)
+        response = llm.generate(prompt, temperature=0.0)
+        action = extract_json_from_text(response)
         
         if action and "action" in action:
             return action
