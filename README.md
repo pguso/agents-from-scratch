@@ -6,7 +6,20 @@ This repository teaches how AI agents actually work by building **one agent** st
 
 **No frameworks. No cloud APIs. No hidden reasoning. No magic.**
 
-> Prefer JavaScript? A JavaScript / Node.js version of these ideas, structured differently, is available at [github.com/pguso/ai-agents-from-scratch](https://github.com/pguso/ai-agents-from-scratch).
+
+## Related Projects
+
+### [AI Product from Scratch](https://github.com/yourusername/ai-product-from-scratch)
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+
+Learn AI product development fundamentals with local LLMs. Covers prompt engineering, structured output, multi-step reasoning, API design, and frontend integration through 10 comprehensive lessons with visual diagrams.
+
+### [AI Agents from Scratch in JavaScript](https://github.com/pguso/ai-agents-from-scratch) 
+
+![Python](https://img.shields.io/badge/JavaScript-3776AB?logo=javascript&logoColor=yellow)
 
 ![Agent Architecture](diagrams/agent-architecture.png)
 
