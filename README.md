@@ -14,6 +14,7 @@ This repository teaches how AI agents actually work by building **one agent** st
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![gitcgr](https://gitcgr.com/badge/pguso/agents-from-scratch.svg)](https://gitcgr.com/pguso/agents-from-scratch)
 
 Learn AI product development fundamentals with local LLMs. Covers prompt engineering, structured output, multi-step reasoning, API design, and frontend integration through 10 comprehensive lessons with visual diagrams.
 
