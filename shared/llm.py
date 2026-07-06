@@ -40,21 +40,21 @@ class LocalLLM:
         """
         self.llm = Llama(
             model_path=model_path,
-            temperature=temperature,
             n_ctx=n_ctx,
             verbose=False,
         )
+        self.temperature = temperature
         self.max_tokens = max_tokens
-    
+
     def generate(self, prompt: str, temperature: float = None, stop: list[str] = None) -> str:
         """
         Generate text from a prompt.
-        
+
         Args:
             prompt: The input text prompt
-            temperature: Optional temperature override
+            temperature: Optional temperature override (falls back to instance default)
             stop: Optional list of stop sequences
-            
+
         Returns:
             Generated text as a string
         """
@@ -62,10 +62,8 @@ class LocalLLM:
             "prompt": prompt,
             "max_tokens": self.max_tokens,
             "stop": stop if stop is not None else ["</s>", "\n\n", "User:", "Assistant:"],
+            "temperature": temperature if temperature is not None else self.temperature,
         }
-        
-        if temperature is not None:
-            kwargs["temperature"] = temperature
-        
+
         response = self.llm(**kwargs)
         return response["choices"][0]["text"].strip()
